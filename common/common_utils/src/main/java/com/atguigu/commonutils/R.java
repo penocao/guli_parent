@@ -23,7 +23,6 @@ public class R {
 
     private R() {}
 
-    // 成功静态方法
     public static R ok() {
         R r = new R();
         r.setSuccess(true);
@@ -32,11 +31,10 @@ public class R {
         return r;
     }
 
-    // 失败静态方法
     public static R error() {
         R r = new R();
-        r.setSuccess(true);
-        r.setCode(ResultCode.SUCCESS);
+        r.setSuccess(false);
+        r.setCode(ResultCode.ERROR);
         r.setMessage("失败");
         return r;
     }
