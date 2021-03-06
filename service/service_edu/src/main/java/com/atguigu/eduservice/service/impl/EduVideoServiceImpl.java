@@ -7,14 +7,18 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
  * 课程视频 服务实现类
- * </p>
  *
  * @author testjava
  * @since 2021-02-09
  */
 @Service
-public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo> implements EduVideoService {
+public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo>
+        implements EduVideoService {
 
+    @Override
+    public boolean deleteVideo(String videoId) {
+        int result = this.baseMapper.deleteById(videoId);
+        return result > 0;
+    }
 }
